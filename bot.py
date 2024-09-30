@@ -1,4 +1,6 @@
 import os
+from keep_alive import keep_alive
+keep_alive()
 import re
 import sys
 import json
