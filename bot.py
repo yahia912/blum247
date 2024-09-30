@@ -27,16 +27,6 @@ import python_socks
 from httpx_socks import AsyncProxyTransport
 from fake_useragent import UserAgent
 
-app = Flask(__name__)
-
-@app.route('/')
-def hello():
-    return "Hello, world!"
-
-if __name__ == "__main__":
-    port = int(os.environ.get('PORT', 8080))  # Use the port from the environment variable
-    app.run(host='0.0.0.0', port=port)
-
 
 init(autoreset=True)
 red = Fore.LIGHTRED_EX
@@ -633,3 +623,14 @@ if __name__ == "__main__":
         asyncio.run(main())
     except KeyboardInterrupt:
         exit()
+        
+    app = Flask(__name__)
+
+    @app.route('/')
+    def hello():
+        return "Hello, world!"
+
+    if __name__ == "__main__":
+        port = int(os.environ.get('PORT', 8080))  # Use the port from the environment variable
+        app.run(host='0.0.0.0', port=port)
+
